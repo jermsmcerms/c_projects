@@ -1,0 +1,2 @@
+char *initPointer(char val);
+

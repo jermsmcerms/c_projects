@@ -1,0 +1,20 @@
+static int test_1(char *ptr, char val);
+static int test_2();
+static int test_3();
+static int test_4();
+static int test_5();
+static int test_6();
+static int test_7();
+static int test_8();
+static int test_9();
+static int test_10();
+static int test_11();
+static int test_12();
+static int test_13();
+static int test_14();
+static int test_15();
+static int test_16();
+static int test_17();
+static int test_18();
+
+void run();
