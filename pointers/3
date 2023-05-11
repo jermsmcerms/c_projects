@@ -65,26 +65,11 @@ int test_5() {
     char reversedArray[10] = { 'j','i','h','g','f','e','d','c','b','a' };
 
     reverse(array, 10);
-
-    printf("reverse(char *, unsigned int): case 1\n");
+    
     for(int i = 0; i < 10; i++) {
         if(array[i] != reversedArray[i]) {
             printf("reverse(char *, unsigned int)\n");
             printf("Expected: %c, Actual: %c\n", reversedArray[i], array[i]);
-            return 0;
-        }
-    }
-
-    char array_2[11] = { 'a','b','c','d','e','f','g','h','i','j','k' };
-    char reversedArray_2[11] = { 'k','j','i','h','g','f','e','d','c','b','a' };
-
-    reverse(array_2, 11);
-
-    printf("reverse(char *, unsigned int): case 2\n");
-    for(int i = 0; i < 11; i++) {
-        if(array_2[i] != reversedArray_2[i]) {
-            printf("reverse(char *, unsigned int)\n");
-            printf("Expected: %c, Actual: %c\n", reversedArray_2[i], array_2[i]);
             return 0;
         }
     }

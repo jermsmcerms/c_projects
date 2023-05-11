@@ -3,10 +3,11 @@
 #include <stdlib.h>
 
 int *createIntArray(unsigned int size) {
-    return malloc(size * sizeof(int));
+    return (int*)malloc(size * sizeof(int));
 }
 
-void freeIntArray(int *intArray, unsigned int size) {
-    free(intArray);
+void freeIntArray(void **intArray, unsigned int size) {
+    free(*intArray);
+    *intArray = NULL;
 }
 

@@ -1,3 +1,4 @@
+#include "test.h"
 #include "simple_allocation.h"
 
 #include <stdio.h>
@@ -6,26 +7,46 @@
 #define BUFFER_SIZE 100
 
 int test_1() { 
-    int *ptr = createIntArray(BUFFER_SIZE);
+    ptr = createIntArray(BUFFER_SIZE);
     if(!ptr) {
         return 0;
     }
-    free(ptr);
     return 1; 
 } 
 
-int test_2() { return 0; } 
+int test_2() { 
+    if(!ptr) {
+        return 0;
+    }
 
-int test_3() { return 0; }
+    int i;
+
+    // Add data to test that free removes data
+    for(i = 0; i < BUFFER_SIZE; i++) {
+        ptr[i] = i + 1;
+    }
+
+    freeIntArray((void**)&ptr, BUFFER_SIZE);
+
+    if(ptr) {
+        printf("printing contents of buffer\n");
+        for(i = 0; i < BUFFER_SIZE; i++) {
+            printf("%i\n", ptr[i]);
+        }
+
+        return 0;
+    }
+   
+    return 1;
+} 
 
 void run() {
-    int num_tests = 3;
+    int num_tests = 2;
     int num_pass = 0;
     
     num_pass += test_1();
     num_pass += test_2();
-    num_pass += test_3();
 
-    printf("%i out of %i tests passed.\n", num_tests, num_tests);
+    printf("%i out of %i tests passed.\n", num_pass, num_tests);
 }
 

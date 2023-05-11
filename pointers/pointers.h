@@ -1,2 +1,10 @@
 char *initPointer(char val);
-
+int addTwoNumbers(int *a, int *b);
+void swap(int *a, int *b);
+void printPtrArray(char *ptr, unsigned int size);
+void copyIntArray(int *ptr, unsigned int size);
+void arraySwap(int *a, int *b, unsigned int size);
+void reverse(char *ptr, unsigned int size);
+void search(int *ptr, unsigned int size, int val);
+int my_strlen(char* ptr, unsigned int size);
+int my_strcmp(char *a, unsigned int size_a, char *b, unsigned int size_b);

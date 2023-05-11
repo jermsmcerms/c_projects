@@ -1,2 +1,2 @@
 int *createIntArray(unsigned int size);
-void freeIntArray(int* intArray, unsigned int size);
+void freeIntArray(void **intArray, unsigned int size);
